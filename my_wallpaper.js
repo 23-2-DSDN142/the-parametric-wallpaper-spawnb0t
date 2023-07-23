@@ -24,22 +24,70 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Draw below:
   
-  fill(255);
-  stroke(71, 102, 155); // blue colour
+  let black = (0)
+    let darkFur = (50)
+    let noseHoles = (40)
+    let white = (250)
+  
+    let headTop = (70);
+    let headBottom = (160)
+
+    let earStart = (75)
+    let earTop = (60)
+    let earDroop = (80)
+
+    let eyeL = (85)
+    let eyeR = (115)
+    let eyeHeight = (90)
+  
+    
+    // snout
+    fill(darkFur);
+    beginShape(); 
+    vertex(80, headTop);
+    vertex(120, headTop);
+    vertex(105, headBottom);
+    vertex(95, headBottom);
+    vertex(80, headTop);
+    endShape(CLOSE);
+
+    // nose
+    fill(black);
+    ellipse(100, headBottom, 10, 8); 
+    fill(noseHoles);
+    ellipse(98, headBottom, 3, 2); 
+    ellipse(102, headBottom, 3, 2); 
 
 
-  ellipse(headX - 15, earY, 20, 70); // left ear
-  ellipse(headX + 15, earY, 20, 70);
+    // earLeft
+    fill(darkFur);
+    beginShape(); 
+    vertex(earStart, headTop);
+    vertex(earStart+10, headTop);
+    vertex(earStart+7, earTop);
+    vertex(earStart-3, earTop);
+    vertex(earStart-10, earDroop);
+    vertex(earStart-5, earDroop)
+    endShape(CLOSE);
 
-  ellipse(headX, headY, 70, 70); //head
+    // earRight
+    fill(darkFur);
+    beginShape(); 
+    vertex(earStart+50, headTop);
+    vertex(earStart+50-10, headTop);
+    vertex(earStart+50-7, earTop);
+    vertex(earStart+50+3, earTop);
+    vertex(earStart+50+10, earDroop);
+    vertex(earStart+50+5, earDroop)
+    endShape(CLOSE);
 
-  fill(71, 102, 155) // blue colour
-
-  ellipse(headX - 15, eyeY, eyeSize, eyeSize) //left eye // 60 before
-
-  ellipse(headX + 15, eyeY, eyeSize, eyeSize) // right eye
-
-  line(headX - 5, headY + 10, headX + 5, headY + 5);
-  line(headX + 5, headY + 10, headX - 5, headY + 5);
+    //eyes
+    fill(white);
+    ellipse(eyeL, eyeHeight, 20, 20);
+    ellipse(eyeR, eyeHeight, 20, 20);
+    fill(black);
+    ellipse(eyeL+3, eyeHeight, 3, 3);
+    ellipse(eyeR-3, eyeHeight, 3, 3);
+    
 }
 
