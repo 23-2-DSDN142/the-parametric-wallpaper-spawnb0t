@@ -18,9 +18,11 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Draw below:
   
     let black = (0);
-    let mainFur = ('#a9b6bb'); // 50 dark grey //'#b97e43' tan
+    let mainFur = (50); // 50 dark grey //'#b97e43' tan // #a9b6bb light grey
     let noseHoles = (40);
     let white = (250);
+    let pink = ('#FDA2C6');
+    let eyeColour = ('#67443b'); // brown eyes
   
     let headTop = (40);
     let headL = (80);
@@ -37,7 +39,28 @@ function my_symbol() { // do not rename this function. Draw below:
       let eyeHeight = (headTop+25); //+25
     let eyeDiameter = (23); 
     let pupilDiameter = (4); //4
-  
+    let eyeColourDiameter = (8); //8
+
+    // tongue - mouth
+    noStroke();
+    fill(pink);
+    beginShape();
+    curveVertex(100, 130);
+    curveVertex(100, 130);
+    curveVertex(120, 138);
+    curveVertex(130, 148);
+    curveVertex(105, 140);
+    curveVertex(105, 140);
+    endShape();
+    stroke(black);
+    beginShape();
+    curveVertex(100, 138);
+    curveVertex(100, 138);
+    curveVertex(110, 137);
+    curveVertex(120, 142);
+    curveVertex(120, 142);
+    endShape();
+
     
     // head & snout
     fill(mainFur);
@@ -49,6 +72,49 @@ function my_symbol() { // do not rename this function. Draw below:
     vertex(headL+15, snoutBottom);
     vertex(headL, headTop);
     endShape(CLOSE);
+
+
+    // face markings
+    // bottom R snout
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(100, 120);
+    curveVertex(100, 120);
+    curveVertex(108, 125);
+    curveVertex(107, 140);
+    curveVertex(105, 150);
+    curveVertex(100, 150);
+    curveVertex(100, 150);
+    endShape();
+    // bottom L snout
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(100, 130);
+    curveVertex(100, 130);
+    curveVertex(93, 135);
+    curveVertex(93, 140);
+    curveVertex(94, 148)
+    curveVertex(100, 150);
+    curveVertex(100, 150);
+    endShape();
+    // long middle snout stroke
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(100, 41);
+    curveVertex(100, 41);
+    curveVertex(101, 40);
+    curveVertex(103, 40);
+    curveVertex(104, 48);
+    curveVertex(104, 131);
+    curveVertex(100, 131);
+    curveVertex(100, 131);
+    endShape();
+
+
+
 
     // nose
     fill(black);
@@ -83,6 +149,7 @@ function my_symbol() { // do not rename this function. Draw below:
     vertex(earLstart+10, earTop+7);
     endShape(CLOSE);
 
+
     // earRight
     fill(mainFur);
     beginShape(); 
@@ -107,14 +174,20 @@ function my_symbol() { // do not rename this function. Draw below:
     vertex(earRstart-10, earTop+7);
     endShape(CLOSE);
 
+
     // eyes
     fill(white);
     stroke(black);
     ellipse(eyeL, eyeHeight, eyeDiameter, eyeDiameter);
     ellipse(eyeR, eyeHeight, eyeDiameter, eyeDiameter);
+     noStroke();
+    fill(eyeColour);
+    ellipse(eyeL+3, eyeHeight, eyeColourDiameter, eyeColourDiameter);
+    ellipse(eyeR-3, eyeHeight, eyeColourDiameter, eyeColourDiameter);
     fill(black);
     ellipse(eyeL+3, eyeHeight, pupilDiameter, pupilDiameter);
     ellipse(eyeR-3, eyeHeight, pupilDiameter, pupilDiameter);
+   
     
 }
 
