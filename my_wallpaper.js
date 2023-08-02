@@ -12,18 +12,22 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background('#c9dfc8'); //pastelGreen #c9dfc8 //lightOrange #ffeeda
+  background('#c9dff8'); //pastelGreen #c9dfc8 //lightOrange #ffeeda
 }
+
+
 
 function my_symbol() { // do not rename this function. Draw below:
   
+      
+  
     let black = (0);
-    let mainFur = (50); // 50 dark grey //'#b97e43' tan // #a9b6bb light grey
+    let mainFur = ('#b97e43'); // 50 dark grey //'#b97e43' tan // #a9b6bb light grey
     let noseHoles = (40);
     let white = (250);
     let pink = ('#FDA2C6');
     let eyeColour = ('#67443b'); // brown eyes
-  
+
     let headTop = (40);
     let headL = (80);
       let headR = (headL+40);
@@ -41,24 +45,31 @@ function my_symbol() { // do not rename this function. Draw below:
     let pupilDiameter = (4); //4
     let eyeColourDiameter = (8); //8
 
+    let midX = 100
+
+
+    // decorations
+    arc(0, 0, 50, 50, 0, HALF_PI);
+
+
     // tongue - mouth
     noStroke();
     fill(pink);
     beginShape();
-    curveVertex(100, 130);
-    curveVertex(100, 130);
-    curveVertex(120, 138);
-    curveVertex(130, 148);
-    curveVertex(105, 140);
-    curveVertex(105, 140);
+    curveVertex(midX, snoutBottom-20);
+    curveVertex(midX, snoutBottom-20);
+    curveVertex(midX+20, snoutBottom-12);
+    curveVertex(midX+30, snoutBottom-2);
+    curveVertex(midX+5, snoutBottom-10);
+    curveVertex(midX+5, snoutBottom-10);
     endShape();
     stroke(black);
     beginShape();
-    curveVertex(100, 138);
-    curveVertex(100, 138);
-    curveVertex(110, 137);
-    curveVertex(120, 142);
-    curveVertex(120, 142);
+    curveVertex(midX, snoutBottom-12);
+    curveVertex(midX, snoutBottom-12);
+    curveVertex(midX+10, snoutBottom-13);
+    curveVertex(midX+20, snoutBottom-8);
+    curveVertex(midX+20, snoutBottom-8);
     endShape();
 
     
@@ -74,44 +85,44 @@ function my_symbol() { // do not rename this function. Draw below:
     endShape(CLOSE);
 
 
-    // face markings
-    // bottom R snout
-    noStroke();
-    fill(white);
-    beginShape();
-    curveVertex(100, 120);
-    curveVertex(100, 120);
-    curveVertex(108, 125);
-    curveVertex(107, 140);
-    curveVertex(105, 150);
-    curveVertex(100, 150);
-    curveVertex(100, 150);
-    endShape();
-    // bottom L snout
-    noStroke();
-    fill(white);
-    beginShape();
-    curveVertex(100, 130);
-    curveVertex(100, 130);
-    curveVertex(93, 135);
-    curveVertex(93, 140);
-    curveVertex(94, 148)
-    curveVertex(100, 150);
-    curveVertex(100, 150);
-    endShape();
-    // long middle snout stroke
-    noStroke();
-    fill(white);
-    beginShape();
-    curveVertex(100, 41);
-    curveVertex(100, 41);
-    curveVertex(101, 40);
-    curveVertex(103, 40);
-    curveVertex(104, 48);
-    curveVertex(104, 131);
-    curveVertex(100, 131);
-    curveVertex(100, 131);
-    endShape();
+    // // face markings
+    // // bottom R snout
+    // noStroke();
+    // fill(white);
+    // beginShape();
+    // curveVertex(midX-20, 120);
+    // curveVertex(midX-20, 120);
+    // curveVertex(108, 125);
+    // curveVertex(107, 140);
+    // curveVertex(105, 150);
+    // curveVertex(110, 150);
+    // curveVertex(110, 150);
+    // endShape();
+    // // // bottom L snout
+    // noStroke();
+    // fill(white);
+    // beginShape();
+    // curveVertex(100, 130);
+    // curveVertex(100, 130);
+    // curveVertex(93, 135);
+    // curveVertex(93, 140);
+    // curveVertex(94, 148)
+    // curveVertex(100, 150);
+    // curveVertex(100, 150);
+    // endShape();
+    // // long middle snout stroke
+    // noStroke();
+    // fill(white);
+    // beginShape();
+    // curveVertex(100, 41);
+    // curveVertex(100, 41);
+    // curveVertex(101, 40);
+    // curveVertex(103, 40);
+    // curveVertex(104, 48);
+    // curveVertex(104, 131);
+    // curveVertex(100, 131);
+    // curveVertex(100, 131);
+    // endShape();
 
 
 
