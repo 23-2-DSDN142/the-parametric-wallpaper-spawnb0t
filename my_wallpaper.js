@@ -1,6 +1,5 @@
 //your parameter variables go here!
 
-
 //colour variable "NAME" is changed to (r, g, b) at line X
 
 function setup_wallpaper(pWallpaper) {
@@ -116,42 +115,6 @@ function my_symbol() { // do not rename this function. Draw below:
       ellipse(60, 60, 30, 30);
 
     }
-
-    
-
-    //blob sketches
-    // fill(turquoise);
-    // stroke(turquoise);
-    // beginShape();
-    // curveVertex(0, 30);
-    // curveVertex(0, 30);
-    // curveVertex(30, 35);
-    // curveVertex(30, 0);
-    // curveVertex(30, 0);
-    // endShape();
-
-    // beginShape(); 
-    // vertex(0, 0);
-    // vertex(30, 0)
-    // vertex(0, 30)
-    // endShape(CLOSE);
-
-    // arc(0, 0, 50, 50, 0, 90);
-
-    // stroke(black);
-    // strokeWeight(5);
-    // vertex(10, 10);
-    // vertex(15, 20);
-
-    // stroke(black);
-    // beginShape();
-    // curveVertex(10, 10);
-    // curveVertex(10, 10);
-    // curveVertex(5, 15);
-    // // curveVertex(20, 20);
-    // // curveVertex(15, 15);
-    // // curveVertex(15, 15);
-    // endShape();
 
     
 
