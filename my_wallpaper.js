@@ -3,12 +3,18 @@
 let midX = 100
 
 let black = (0);
-    let mainFur = (220); // 50 dark grey //'#b97e43' tan // #a9b6bb light grey
+    let mainFur = "darkBrown";
+      // darkGrey
+      // tan
+      // lightGrey
+      // black
+      // darkBrown
+
     let noseHoles = (40);
     let white = (250);
     let tonguePink = ('#d37074');
     let eyeColour = ('#67443b'); // brown eyes
-    let turquoise = ('#4aa38f');
+    let lightGrey = (200);
 
     let headTop = (40);
     let headL = (80);
@@ -27,9 +33,9 @@ let black = (0);
     let pupilDiameter = (4); //4
     let eyeColourDiameter = (8); //8
 
-    let motif = false;
+    let motif = true;
 
-    let colourPallete = "greyscale";
+    let colourPallete = "pink";
       let shadeBackground;
       let shadeOne;
       let shadeTwo;
@@ -38,16 +44,16 @@ let black = (0);
       let shadeFive;
       let shadeSix;
 
-      let pattern = (2);
+      let pattern = (3);
         // pattern 1 = long irregular blobs 
         // pattern 2 = big circular blobs
         // pattern 3 = square pixels
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
   pWallpaper.resolution(NINE_LANDSCAPE); // NINE_LANDSCAPE/PORTRAIT
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -55,8 +61,29 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 100;
 }
 
+//////////////////////////////// wallpaper paste variables above
+
 function wallpaper_background() {
-  background(255);
+  if(colourPallete == "pink") {
+      
+    shadeBackground = color('#FFEEEC')
+  }
+
+  else if(colourPallete == "green") {
+    shadeBackground = color('#ebefec')
+  }
+
+  else if(colourPallete == "retro") {
+    shadeBackground = color('#fef7e2');
+
+  }
+
+  else if(colourPallete == "greyscale") {
+    shadeBackground = color(220);
+
+  }
+  background(shadeBackground);
+  // console.log(colourPallete);
 }
 
 function my_symbol() { // do not rename this function. Draw below:
@@ -72,15 +99,25 @@ function my_symbol() { // do not rename this function. Draw below:
       shadeSix = color('#E9A79D'); 
     }
 
+    // else if(colourPallete == "green") {
+    //   shadeBackground = color('#ebefec')
+    //   shadeOne = color('#c5e1a5');
+    //   shadeTwo = color('#94c973');
+    //   shadeThree = color('#d2fba4');
+    //   shadeFour = color('#aafcab');
+    //   shadeFive = color('#aafcab');
+    //   shadeSix = color('#479f8b');
+    // }
+
     else if(colourPallete == "green") {
-      shadeBackground = color('#ebefec')
-      shadeOne = color('#c5e1a5');
-      shadeTwo = color('#94c973');
-      shadeThree = color('#d2fba4');
-      shadeFour = color('#aafcab');
-      shadeFive = color('#aafcab');
-      shadeSix = color('#479f8b');
-    }
+        shadeBackground = color('#f1f1f1')
+        shadeOne = color('#c4d977');
+        shadeTwo = color('#bfbc88');
+        shadeThree = color('#a69d9c');
+        shadeFour = color('#d2c8c6');
+        shadeFive = color('#c5e1a5');
+        shadeSix = color(200);
+      }
 
     else if(colourPallete == "retro") {
       shadeBackground = color('#fef7e2');
@@ -359,23 +396,6 @@ function my_symbol() { // do not rename this function. Draw below:
       curveVertex(113, 10);
       curveVertex(113, 10);
       endShape();
-
-
-
-      // // fill(shadeFour);
-      // // beginShape();
-      // curveVertex(150, 20);
-      // curveVertex(150, 20);
-      // curveVertex(160, 12);
-      // // curveVertex(180, 6);
-      // // curveVertex(197, 10);
-      // // curveVertex(189, 32);
-      // // curveVertex(155, 34);
-      // curveVertex(155, 24);
-      // curveVertex(155, 24);
-      // endShape();
-
-
     }
 
     // big circular blobs
@@ -450,12 +470,6 @@ function my_symbol() { // do not rename this function. Draw below:
       curveVertex(122, 110);
       curveVertex(140, 100);
       endShape();
-
-      
-      
-      // fill(0);
-      // ellipse(20, 160, 2, 2);
-      // ellipse(150, 180, 2, 2);
 
     }
 
@@ -638,15 +652,40 @@ function my_symbol() { // do not rename this function. Draw below:
 
       fill(shadeTwo);
       rect(180, 180, 20);
-
     }
 
-    
+    if (mainFur == "tan") {
+      
+      mainFur = '#b97e43' 
+    }
+    else if (mainFur == "darkGrey") {
 
+      mainFur = 50
+    }
+    else if (mainFur == "black"){
+
+      mainFur = 0
+
+    }
+    else if (mainFur == "lightGrey") {
+
+      mainFur = '#a9b6bb'
+    }
+    else if (mainFur == "darkBrown") {
+
+      mainFur = '#4a3728'
+    }
+    
 
 // greyhound motif:
 
 if(motif == true) {
+
+  // motif circle background
+  fill(lightGrey);
+  noStroke();
+  ellipse(midX, headTop+47, 110, snoutBottom+5);
+
     // tongue - mouth
     strokeWeight(1);
     noStroke();
@@ -655,7 +694,7 @@ if(motif == true) {
     curveVertex(midX, snoutBottom-20);
     curveVertex(midX, snoutBottom-20);
     curveVertex(midX+20, snoutBottom-12);
-    curveVertex(midX+30, snoutBottom-2);
+    curveVertex(midX+27, snoutBottom-2);
     curveVertex(midX+5, snoutBottom-10);
     curveVertex(midX+5, snoutBottom-10);
     endShape();
@@ -664,11 +703,11 @@ if(motif == true) {
     curveVertex(midX, snoutBottom-12);
     curveVertex(midX, snoutBottom-12);
     curveVertex(midX+10, snoutBottom-13);
-    curveVertex(midX+20, snoutBottom-8);
-    curveVertex(midX+20, snoutBottom-8);
+    curveVertex(midX+20, snoutBottom-9);
+    curveVertex(midX+20, snoutBottom-9);
     endShape();
-
     
+
     // head & snout
     fill(mainFur);
     noStroke();
@@ -680,45 +719,33 @@ if(motif == true) {
     vertex(headL, headTop);
     endShape(CLOSE);
 
+    // face marking
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(94, snoutBottom-20);
+    curveVertex(94, snoutBottom-20);
+    curveVertex(96, snoutBottom-25);
+    curveVertex(104, snoutBottom-25);
+    curveVertex(96, snoutBottom-18);
+    curveVertex(94, snoutBottom-12);
+    curveVertex(93, snoutBottom-18);
+    curveVertex(93, snoutBottom-18);
+    endShape();
 
-    // // // face markings
-    // // // bottom R snout
-    // // noStroke();
-    // // fill(white);
-    // // beginShape();
-    // // curveVertex(midX-20, 120);
-    // // curveVertex(midX-20, 120);
-    // // curveVertex(108, 125);
-    // // curveVertex(107, 140);
-    // // curveVertex(105, 150);
-    // // curveVertex(110, 150);
-    // // curveVertex(110, 150);
-    // // endShape();
-    // // // // bottom L snout
-    // // noStroke();
-    // // fill(white);
-    // // beginShape();
-    // // curveVertex(100, 130);
-    // // curveVertex(100, 130);
-    // // curveVertex(93, 135);
-    // // curveVertex(93, 140);
-    // // curveVertex(94, 148)
-    // // curveVertex(100, 150);
-    // // curveVertex(100, 150);
-    // // endShape();
-    // // // long middle snout stroke
-    // // noStroke();
-    // // fill(white);
-    // // beginShape();
-    // // curveVertex(100, 41);
-    // // curveVertex(100, 41);
-    // // curveVertex(101, 40);
-    // // curveVertex(103, 40);
-    // // curveVertex(104, 48);
-    // // curveVertex(104, 131);
-    // // curveVertex(100, 131);
-    // // curveVertex(100, 131);
-    // // endShape();
+    //ear/face marking
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(118, snoutBottom-90);
+    curveVertex(118, snoutBottom-90);
+    curveVertex(112, snoutBottom-95);
+    curveVertex(110, snoutBottom-100);
+    curveVertex(122, snoutBottom-100);
+    curveVertex(122, snoutBottom-100);
+    endShape();
+
+   
 
     // nose
     fill(black);
@@ -770,6 +797,20 @@ if(motif == true) {
     vertex(earRstart+6, earTriangleDroop)
     vertex(earRstart+9, earTriangleDroop-4)
     endShape(CLOSE);
+
+    // ear marking
+    noStroke();
+    fill(white);
+    beginShape();
+    curveVertex(111, snoutBottom-102);
+    curveVertex(111, snoutBottom-102);
+    curveVertex(123, snoutBottom-106);
+    curveVertex(125, snoutBottom-100)
+    curveVertex(115, snoutBottom-94);
+    curveVertex(111, snoutBottom-96);
+    curveVertex(111, snoutBottom-96);
+    endShape();
+
     // R ear hole
     fill(black);
     beginShape();
@@ -794,6 +835,3 @@ if(motif == true) {
 
 }
 }
-
-
-// angleMode(DEGREES);

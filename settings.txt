@@ -51,3 +51,10 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 100;
   pWallpaper.grid_settings.row_offset  = 0;
 }
+
+
+Wallpaper1 variables:
+
+
+
+Wallpaper2 variables:
