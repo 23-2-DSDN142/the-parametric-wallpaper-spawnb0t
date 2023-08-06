@@ -53,7 +53,7 @@ let black = (0);
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
-  pWallpaper.resolution(NINE_LANDSCAPE); // NINE_LANDSCAPE/PORTRAIT
+  pWallpaper.resolution(NINE_LANDSCAPE); // NINE_LANDSCAPE/PORTRAIT // A3 final
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
