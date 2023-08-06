@@ -43,8 +43,9 @@ let black = (0);
       let shadeFour;
       let shadeFive;
       let shadeSix;
+      let shadeSeven;
 
-      let pattern = (3);
+      let pattern = (1);
         // pattern 1 = long irregular blobs 
         // pattern 2 = big circular blobs
         // pattern 3 = square pixels
@@ -96,18 +97,9 @@ function my_symbol() { // do not rename this function. Draw below:
       shadeThree = color('#A49393'); 
       shadeFour = color('#E1B5C3'); 
       shadeFive = color('#3B0404'); 
-      shadeSix = color('#E9A79D'); 
+      shadeSix = color('#F1C7C0'); 
+      shadeSeven = color('#f2e9f2');
     }
-
-    // else if(colourPallete == "green") {
-    //   shadeBackground = color('#ebefec')
-    //   shadeOne = color('#c5e1a5');
-    //   shadeTwo = color('#94c973');
-    //   shadeThree = color('#d2fba4');
-    //   shadeFour = color('#aafcab');
-    //   shadeFive = color('#aafcab');
-    //   shadeSix = color('#479f8b');
-    // }
 
     else if(colourPallete == "green") {
         shadeBackground = color('#f1f1f1')
@@ -117,16 +109,18 @@ function my_symbol() { // do not rename this function. Draw below:
         shadeFour = color('#d2c8c6');
         shadeFive = color('#c5e1a5');
         shadeSix = color(200);
+        shadeSeven = color(220);
       }
 
     else if(colourPallete == "retro") {
       shadeBackground = color('#fef7e2');
       shadeOne = color('#ca9a7e');
-      shadeTwo = color('#708990');
-      shadeThree = color('#a16b56');
+      shadeTwo = color('#93abb1');
+      shadeThree = color('#b48573');
       shadeFour = color('#e0a370');
       shadeFive = color('#dec584');
       shadeSix = color('#94808B');
+      shadeSeven = color(200);
 
     }
 
@@ -138,6 +132,7 @@ function my_symbol() { // do not rename this function. Draw below:
       shadeFour = color(160);
       shadeFive = color(240);
       shadeSix = color(50);
+      shadeSeven = color(240);
 
     }
 
@@ -682,7 +677,7 @@ function my_symbol() { // do not rename this function. Draw below:
 if(motif == true) {
 
   // motif circle background
-  fill(lightGrey);
+  fill(shadeSeven);
   noStroke();
   ellipse(midX, headTop+47, 110, snoutBottom+5);
 
