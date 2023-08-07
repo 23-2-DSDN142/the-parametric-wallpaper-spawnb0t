@@ -4,7 +4,7 @@
 let midX = 100
 
 let black = (0);
-    let mainFur = "lightGrey";
+    let mainFur = "tan";
       // darkGrey
       // tan
       // lightGrey
@@ -16,7 +16,7 @@ let black = (0);
     let tonguePink = ('#d37074');
     let eyeColour = ('#67443b'); // brown eyes
     let lightGrey = (200);
-    let marking = ('#4a3728');
+    let marking = (white);
 
     let headTop = (40); //40
     let headL = (80);
@@ -31,11 +31,11 @@ let black = (0);
     let eyeL = (85);
     let eyeR = (115);
       let eyeHeight = (headTop+25); //+25
-    let eyeDiameter = (30); //23
+    let eyeDiameter = (26); //23
     let pupilDiameter = (4); //4
     let eyeColourDiameter = (8); //8
 
-    let motif = true;
+    let motifFrame = true;
 
     let colourPalette = "green";
       let shadeBackground;
@@ -47,7 +47,7 @@ let black = (0);
       let shadeSix;
       let shadeSeven;
 
-      let pattern = (1);
+      let pattern = (2);
         // pattern 1 = long irregular blobs 
         // pattern 2 = big circular blobs
         // pattern 3 = square pixels
@@ -55,15 +55,14 @@ let black = (0);
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
-  pWallpaper.resolution(NINE_PORTRAIT); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.resolution(FIT_TO_SCREEN); // NINE_LANDSCAPE/PORTRAIT // A3 final
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 200;
-  pWallpaper.grid_settings.cell_height = 90;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
-
 
 
 
@@ -107,7 +106,7 @@ function my_symbol() { // do not rename this function. Draw below:
     }
 
     else if(colourPalette == "green") {
-        shadeBackground = color('#f1f1f1')
+        shadeBackground = color('#ebefec')
         shadeOne = color('#c4d977');
         shadeTwo = color('#bfbc88');
         shadeThree = color('#a69d9c');
@@ -679,12 +678,168 @@ function my_symbol() { // do not rename this function. Draw below:
 
 // greyhound motif:
 
-if(motif == true) {
+if(motifFrame == true) {
 
   // motif circle background
   fill(shadeSeven);
   noStroke();
   ellipse(midX, headTop+47, 110, snoutBottom+5);
+
+    // tongue - mouth
+    strokeWeight(1);
+    noStroke();
+    fill(tonguePink);
+    beginShape();
+    curveVertex(midX, snoutBottom-20);
+    curveVertex(midX, snoutBottom-20);
+    curveVertex(midX+20, snoutBottom-12);
+    curveVertex(midX+27, snoutBottom-2);
+    curveVertex(midX+5, snoutBottom-10);
+    curveVertex(midX+5, snoutBottom-10);
+    endShape();
+    stroke(black);
+    beginShape();
+    curveVertex(midX, snoutBottom-12);
+    curveVertex(midX, snoutBottom-12);
+    curveVertex(midX+10, snoutBottom-13);
+    curveVertex(midX+20, snoutBottom-8);
+    curveVertex(midX+20, snoutBottom-8);
+    endShape();
+    
+
+    // head & snout
+    fill(mainFur);
+    noStroke();
+    beginShape(); 
+    vertex(headL, headTop);
+    vertex(headR, headTop);
+    vertex(headR-15, snoutBottom);
+    vertex(headL+15, snoutBottom);
+    vertex(headL, headTop);
+    endShape(CLOSE);
+
+    // face marking
+    noStroke();
+    fill(marking);
+    beginShape();
+    curveVertex(94, snoutBottom-20);
+    curveVertex(94, snoutBottom-20);
+    curveVertex(96, snoutBottom-25);
+    curveVertex(104, snoutBottom-25);
+    curveVertex(96, snoutBottom-18);
+    curveVertex(94, snoutBottom-12);
+    curveVertex(93, snoutBottom-18);
+    curveVertex(93, snoutBottom-18);
+    endShape();
+   
+
+    // nose
+    fill(black);
+    ellipse(100, snoutBottom, 10, 8); 
+    fill(noseHoles);
+    ellipse(98, snoutBottom+1, 3, 2); 
+    ellipse(102, snoutBottom+1, 3, 2); 
+
+
+    // earLeft
+    fill(mainFur);
+    noStroke();
+    beginShape(); 
+    // L parallelogram
+    vertex(earLstart, earTop);
+    vertex(earLstart+13, earTop);
+    vertex(earLstart+20, headTop);
+    vertex(earLstart-2, headTop);
+    endShape(CLOSE);
+    // L triangle ear droop
+    beginShape(); 
+    vertex(earLstart, earTop);
+    vertex(earLstart+11, headTop)
+    vertex(earLstart-6, earTriangleDroop)
+    vertex(earLstart-9, earTriangleDroop-6)
+    endShape(CLOSE);
+    // L ear hole
+    fill(black);
+    beginShape();
+    vertex(earLstart+3, earTop+7);
+    vertex(earLstart+1, earTop+13);
+    vertex(earLstart+10, earTop+7);
+    endShape(CLOSE);
+    // L ear contour
+    strokeWeight(0.5);
+    stroke(black);
+    beginShape();
+    curveVertex(earLstart+10, earTop+3);
+    curveVertex(earLstart+10, earTop+3);
+    curveVertex(earLstart+15, earTop+8);
+    curveVertex(earLstart+15, earTop+8);
+    endShape();
+
+
+    // earRight
+    fill(mainFur);
+    noStroke();
+    beginShape(); 
+    // R parallelogram
+    vertex(earRstart, earTop);
+    vertex(earRstart-13, earTop);
+    vertex(earRstart-16, headTop);
+    vertex(earRstart+2, headTop);
+    endShape(CLOSE);
+    // R triangle ear droop
+    beginShape(); 
+    vertex(earRstart, earTop);
+    vertex(earRstart-11, headTop)
+    vertex(earRstart+6, earTriangleDroop)
+    vertex(earRstart+9, earTriangleDroop-4)
+    endShape(CLOSE);
+    // ear marking
+    noStroke();
+    fill(marking);
+    beginShape();
+    curveVertex(112, snoutBottom-102);
+    curveVertex(112, snoutBottom-102);
+    curveVertex(123, snoutBottom-106);
+    curveVertex(125, snoutBottom-100)
+    curveVertex(115, snoutBottom-94);
+    curveVertex(111, snoutBottom-96);
+    curveVertex(111, snoutBottom-96);
+    endShape();
+    // R ear contour
+    stroke(black);
+    strokeWeight(0.5);
+    beginShape();
+    curveVertex(earRstart-9, earTop+3);
+    curveVertex(earRstart-9, earTop+3);
+    curveVertex(earRstart-13, earTop+8);
+    curveVertex(earRstart-13, earTop+8);
+    endShape();
+
+    // R ear hole
+    noStroke();
+    fill(black);
+    beginShape();
+    vertex(earRstart-3, earTop+7);
+    vertex(earRstart-1, earTop+13);
+    vertex(earRstart-10, earTop+7);
+    endShape(CLOSE);
+
+
+    // eyes
+    fill(white);
+    stroke(black);
+    ellipse(eyeL, eyeHeight, eyeDiameter, eyeDiameter);
+    ellipse(eyeR, eyeHeight, eyeDiameter, eyeDiameter);
+     noStroke();
+    fill(eyeColour);
+    ellipse(eyeL+3, eyeHeight, eyeColourDiameter, eyeColourDiameter);
+    ellipse(eyeR-3, eyeHeight, eyeColourDiameter, eyeColourDiameter);
+    fill(black);
+    ellipse(eyeL+3, eyeHeight, pupilDiameter, pupilDiameter);
+    ellipse(eyeR-3, eyeHeight, pupilDiameter, pupilDiameter);
+
+}
+else {
 
     // tongue - mouth
     strokeWeight(1);
