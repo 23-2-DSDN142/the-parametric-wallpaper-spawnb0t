@@ -1,8 +1,79 @@
+
 Wallpaper 1:
   
-  description
+  Retro 1 (irregular blobs)
+    retro stripe pattern
+
 
 //parameter variables 
+
+let midX = 100
+
+let black = (0);
+    let mainFur = "darkBrown";
+      // darkGrey
+      // tan
+      // lightGrey
+      // black
+      // darkBrown
+
+    let noseHoles = (40);
+    let white = (250);
+    let tonguePink = ('#d37074');
+    let eyeColour = ('#67443b'); // brown eyes
+    let lightGrey = (200);
+    let marking = ('#4a3728');
+
+    let headTop = (40);
+    let headL = (80);
+      let headR = (headL+40);
+    let snoutBottom = (140);
+
+    let earTop = (headTop-8);
+      let earTriangleDroop = (headTop+25); //+25
+    let earLstart = (72);
+    let earRstart = (127);
+
+    let eyeL = (85);
+    let eyeR = (115);
+      let eyeHeight = (headTop+25); //+25
+    let eyeDiameter = (23); 
+    let pupilDiameter = (4); //4
+    let eyeColourDiameter = (8); //8
+
+    let motif = false;
+
+    let colourPalette = "retro";
+      let shadeBackground;
+      let shadeOne;
+      let shadeTwo;
+      let shadeThree;
+      let shadeFour;
+      let shadeFive;
+      let shadeSix;
+      let shadeSeven;
+
+      let pattern = (1);
+        // pattern 1 = long irregular blobs 
+        // pattern 2 = big circular blobs
+        // pattern 3 = square pixels
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.resolution(NINE_PORTRAIT); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 250;
+  pWallpaper.grid_settings.cell_height = 20;
+  pWallpaper.grid_settings.row_offset  = 200;
+}
+
+
+
+
+
 
 
 
@@ -10,9 +81,79 @@ Wallpaper 1:
 
 Wallpaper 2:
   
-  description
+  Retro 2 (big circular blobs)
+    retro offset tiles - darkBrown - circular shape emphasis behind
+
 
 //parameter variables 
+
+let midX = 100
+
+let black = (0);
+    let mainFur = "darkBrown";
+      // darkGrey
+      // tan
+      // lightGrey
+      // black
+      // darkBrown
+
+    let noseHoles = (40);
+    let white = (250);
+    let tonguePink = ('#d37074');
+    let eyeColour = ('#67443b'); // brown eyes
+    let lightGrey = (200);
+    let marking = ('#4a3728');
+
+    let headTop = (40);
+    let headL = (80);
+      let headR = (headL+40);
+    let snoutBottom = (140);
+
+    let earTop = (headTop-8);
+      let earTriangleDroop = (headTop+25); //+25
+    let earLstart = (72);
+    let earRstart = (127);
+
+    let eyeL = (85);
+    let eyeR = (115);
+      let eyeHeight = (headTop+25); //+25
+    let eyeDiameter = (23); 
+    let pupilDiameter = (4); //4
+    let eyeColourDiameter = (8); //8
+
+    let motif = true;
+
+    let colourPalette = "retro";
+      let shadeBackground;
+      let shadeOne;
+      let shadeTwo;
+      let shadeThree;
+      let shadeFour;
+      let shadeFive;
+      let shadeSix;
+      let shadeSeven;
+
+      let pattern = (2);
+        // pattern 1 = long irregular blobs 
+        // pattern 2 = big circular blobs
+        // pattern 3 = square pixels
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.resolution(NINE_PORTRAIT); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+
+
+
+
 
 
 
@@ -20,9 +161,78 @@ Wallpaper 2:
 
 Wallpaper 3:
   
-  description
+  Retro 3 (pixels)
+    colourful retro pixel strips
+
 
 //parameter variables 
+
+let midX = 100
+
+let black = (0);
+    let mainFur = "darkBrown";
+      // darkGrey
+      // tan
+      // lightGrey
+      // black
+      // darkBrown
+
+    let noseHoles = (40);
+    let white = (250);
+    let tonguePink = ('#d37074');
+    let eyeColour = ('#67443b'); // brown eyes
+    let lightGrey = (200);
+    let marking = ('#4a3728');
+
+    let headTop = (30); //40
+    let headL = (80);
+      let headR = (headL+40);
+    let snoutBottom = (140);
+
+    let earTop = (headTop-8);
+      let earTriangleDroop = (headTop+25); //+25
+    let earLstart = (72);
+    let earRstart = (127);
+
+    let eyeL = (85);
+    let eyeR = (115);
+      let eyeHeight = (headTop+25); //+25
+    let eyeDiameter = (28); //23
+    let pupilDiameter = (4); //4
+    let eyeColourDiameter = (8); //8
+
+    let motif = true;
+
+    let colourPalette = "retro";
+      let shadeBackground;
+      let shadeOne;
+      let shadeTwo;
+      let shadeThree;
+      let shadeFour;
+      let shadeFive;
+      let shadeSix;
+      let shadeSeven;
+
+      let pattern = (3);
+        // pattern 1 = long irregular blobs 
+        // pattern 2 = big circular blobs
+        // pattern 3 = square pixels
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.resolution(NINE_LANDSCAPE); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 250;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+}
+
+
+
+
 
 
 
@@ -30,9 +240,79 @@ Wallpaper 3:
 
 Wallpaper 4:
   
-  description
+  Green 1 (irregular blobs)
+    camoflaged sneaky hound with wide eyes
+
 
 //parameter variables 
+
+let midX = 100
+
+let black = (0);
+    let mainFur = "lightGrey";
+      // darkGrey
+      // tan
+      // lightGrey
+      // black
+      // darkBrown
+
+    let noseHoles = (40);
+    let white = (250);
+    let tonguePink = ('#d37074');
+    let eyeColour = ('#67443b'); // brown eyes
+    let lightGrey = (200);
+    let marking = ('#4a3728');
+
+    let headTop = (40); //40
+    let headL = (80);
+      let headR = (headL+40);
+    let snoutBottom = (140);
+
+    let earTop = (headTop-8);
+      let earTriangleDroop = (headTop+25); //+25
+    let earLstart = (72);
+    let earRstart = (127);
+
+    let eyeL = (85);
+    let eyeR = (115);
+      let eyeHeight = (headTop+25); //+25
+    let eyeDiameter = (30); //23
+    let pupilDiameter = (4); //4
+    let eyeColourDiameter = (8); //8
+
+    let motif = true;
+
+    let colourPalette = "green";
+      let shadeBackground;
+      let shadeOne;
+      let shadeTwo;
+      let shadeThree;
+      let shadeFour;
+      let shadeFive;
+      let shadeSix;
+      let shadeSeven;
+
+      let pattern = (1);
+        // pattern 1 = long irregular blobs 
+        // pattern 2 = big circular blobs
+        // pattern 3 = square pixels
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.resolution(NINE_PORTRAIT); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 90;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+
+
+
+
+
 
 
 
@@ -40,7 +320,8 @@ Wallpaper 4:
 
 Wallpaper 5:
   
-  description
+  Green 2 (big circular shapes)
+
 
 //parameter variables 
 

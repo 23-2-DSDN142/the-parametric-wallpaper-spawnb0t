@@ -1,9 +1,10 @@
-//your parameter variables go here!
+//parameter variables below
+
 
 let midX = 100
 
 let black = (0);
-    let mainFur = "darkBrown";
+    let mainFur = "lightGrey";
       // darkGrey
       // tan
       // lightGrey
@@ -15,8 +16,9 @@ let black = (0);
     let tonguePink = ('#d37074');
     let eyeColour = ('#67443b'); // brown eyes
     let lightGrey = (200);
+    let marking = ('#4a3728');
 
-    let headTop = (40);
+    let headTop = (40); //40
     let headL = (80);
       let headR = (headL+40);
     let snoutBottom = (140);
@@ -29,13 +31,13 @@ let black = (0);
     let eyeL = (85);
     let eyeR = (115);
       let eyeHeight = (headTop+25); //+25
-    let eyeDiameter = (23); 
+    let eyeDiameter = (30); //23
     let pupilDiameter = (4); //4
     let eyeColourDiameter = (8); //8
 
     let motif = true;
 
-    let colourPallete = "pink";
+    let colourPalette = "green";
       let shadeBackground;
       let shadeOne;
       let shadeTwo;
@@ -52,44 +54,47 @@ let black = (0);
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
-  pWallpaper.resolution(NINE_LANDSCAPE); // NINE_LANDSCAPE/PORTRAIT // A3 final
+  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH or GLIDE_/GRID_WALLPAPER 
+  pWallpaper.resolution(NINE_PORTRAIT); // NINE_LANDSCAPE/PORTRAIT // A3 final
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
-  pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.cell_height = 90;
+  pWallpaper.grid_settings.row_offset  = 50;
 }
 
-//////////////////////////////// wallpaper paste variables above
+
+
+
+//////////////////////////////// variables above ^^
 
 function wallpaper_background() {
-  if(colourPallete == "pink") {
+  if(colourPalette == "pink") {
       
     shadeBackground = color('#FFEEEC')
   }
 
-  else if(colourPallete == "green") {
+  else if(colourPalette == "green") {
     shadeBackground = color('#ebefec')
   }
 
-  else if(colourPallete == "retro") {
+  else if(colourPalette == "retro") {
     shadeBackground = color('#fef7e2');
 
   }
 
-  else if(colourPallete == "greyscale") {
+  else if(colourPalette == "greyscale") {
     shadeBackground = color(220);
 
   }
   background(shadeBackground);
-  // console.log(colourPallete);
+  // console.log(colourPalette);
 }
 
 function my_symbol() { // do not rename this function. Draw below:
 
-    if(colourPallete == "pink") {
+    if(colourPalette == "pink") {
       
       shadeBackground = color('#FFEEEC')
       shadeOne = color('#E8B4B8');
@@ -101,7 +106,7 @@ function my_symbol() { // do not rename this function. Draw below:
       shadeSeven = color('#f2e9f2');
     }
 
-    else if(colourPallete == "green") {
+    else if(colourPalette == "green") {
         shadeBackground = color('#f1f1f1')
         shadeOne = color('#c4d977');
         shadeTwo = color('#bfbc88');
@@ -112,7 +117,7 @@ function my_symbol() { // do not rename this function. Draw below:
         shadeSeven = color(220);
       }
 
-    else if(colourPallete == "retro") {
+    else if(colourPalette == "retro") {
       shadeBackground = color('#fef7e2');
       shadeOne = color('#ca9a7e');
       shadeTwo = color('#93abb1');
@@ -124,7 +129,7 @@ function my_symbol() { // do not rename this function. Draw below:
 
     }
 
-    else if(colourPallete == "greyscale") {
+    else if(colourPalette == "greyscale") {
       shadeBackground = color(220);
       shadeOne = color(200);
       shadeTwo = color(120);
@@ -698,8 +703,8 @@ if(motif == true) {
     curveVertex(midX, snoutBottom-12);
     curveVertex(midX, snoutBottom-12);
     curveVertex(midX+10, snoutBottom-13);
-    curveVertex(midX+20, snoutBottom-9);
-    curveVertex(midX+20, snoutBottom-9);
+    curveVertex(midX+20, snoutBottom-8);
+    curveVertex(midX+20, snoutBottom-8);
     endShape();
     
 
@@ -716,7 +721,7 @@ if(motif == true) {
 
     // face marking
     noStroke();
-    fill(white);
+    fill(marking);
     beginShape();
     curveVertex(94, snoutBottom-20);
     curveVertex(94, snoutBottom-20);
@@ -727,19 +732,6 @@ if(motif == true) {
     curveVertex(93, snoutBottom-18);
     curveVertex(93, snoutBottom-18);
     endShape();
-
-    //ear/face marking
-    noStroke();
-    fill(white);
-    beginShape();
-    curveVertex(118, snoutBottom-90);
-    curveVertex(118, snoutBottom-90);
-    curveVertex(112, snoutBottom-95);
-    curveVertex(110, snoutBottom-100);
-    curveVertex(122, snoutBottom-100);
-    curveVertex(122, snoutBottom-100);
-    endShape();
-
    
 
     // nose
@@ -774,10 +766,20 @@ if(motif == true) {
     vertex(earLstart+1, earTop+13);
     vertex(earLstart+10, earTop+7);
     endShape(CLOSE);
+    // L ear contour
+    strokeWeight(0.5);
+    stroke(black);
+    beginShape();
+    curveVertex(earLstart+10, earTop+3);
+    curveVertex(earLstart+10, earTop+3);
+    curveVertex(earLstart+15, earTop+8);
+    curveVertex(earLstart+15, earTop+8);
+    endShape();
 
 
     // earRight
     fill(mainFur);
+    noStroke();
     beginShape(); 
     // R parallelogram
     vertex(earRstart, earTop);
@@ -792,21 +794,30 @@ if(motif == true) {
     vertex(earRstart+6, earTriangleDroop)
     vertex(earRstart+9, earTriangleDroop-4)
     endShape(CLOSE);
-
     // ear marking
     noStroke();
-    fill(white);
+    fill(marking);
     beginShape();
-    curveVertex(111, snoutBottom-102);
-    curveVertex(111, snoutBottom-102);
+    curveVertex(112, snoutBottom-102);
+    curveVertex(112, snoutBottom-102);
     curveVertex(123, snoutBottom-106);
     curveVertex(125, snoutBottom-100)
     curveVertex(115, snoutBottom-94);
     curveVertex(111, snoutBottom-96);
     curveVertex(111, snoutBottom-96);
     endShape();
+    // R ear contour
+    stroke(black);
+    strokeWeight(0.5);
+    beginShape();
+    curveVertex(earRstart-9, earTop+3);
+    curveVertex(earRstart-9, earTop+3);
+    curveVertex(earRstart-13, earTop+8);
+    curveVertex(earRstart-13, earTop+8);
+    endShape();
 
     // R ear hole
+    noStroke();
     fill(black);
     beginShape();
     vertex(earRstart-3, earTop+7);
